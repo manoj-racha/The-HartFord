@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaFarms - Farm House Rental</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div>
+                <h1>INSTAFARMS</h1>
+            </div>
+            <div>
+                <p>Contact: +919403892058</p>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Luxury Farmhouse in Hyderabad</h2>
+            <p>Experience the ultimate countryside retreat at our premium farmhouse</p>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section>
+            <h2>Book Your Stay</h2>
+            <p>Reserve your perfect getaway at our exclusive farmhouse</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required minlength="3">
+                    <br><br>
+
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter 10 digit mobile number" required pattern="[0-9]{10}" maxlength="10">
+                    <br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Booking Details</legend>
+                    
+                    <label for="checkIn">Check In Date:</label>
+                    <input type="date" id="checkIn" name="checkIn" required>
+                    <br><br>
+
+                    <label for="checkOut">Check Out Date:</label>
+                    <input type="date" id="checkOut" name="checkOut" required>
+                    <br><br>
+
+                    <label for="adults">Number of Adults:</label>
+                    <input type="number" id="adults" name="adults" min="1" max="20" value="2" required>
+                    <br><br>
+
+                    <label for="children">Number of Children (Age 3-12):</label>
+                    <input type="number" id="children" name="children" min="0" max="10" value="0">
+                    <br><br>
+
+                    <label for="infants">Number of Infants (Age 0-2):</label>
+                    <input type="number" id="infants" name="infants" min="0" max="5" value="0">
+                    <br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Services (Optional)</legend>
+                    
+                    <input type="checkbox" id="meals" name="services" value="meals">
+                    <label for="meals">Meal Service</label>
+                    <br>
+
+                    <input type="checkbox" id="transport" name="services" value="transport">
+                    <label for="transport">Airport Transport</label>
+                    <br>
+
+                    <input type="checkbox" id="activities" name="services" value="activities">
+                    <label for="activities">Outdoor Activities</label>
+                    <br>
+
+                    <input type="checkbox" id="pool" name="services" value="pool">
+                    <label for="pool">Private Pool Access</label>
+                    <br><br>
+
+                    <label for="specialRequests">Special Requests:</label>
+                    <br>
+                    <textarea id="specialRequests" name="specialRequests" rows="4" cols="50" placeholder="Any special requirements or requests..."></textarea>
+                    <br><br>
+                </fieldset>
+
+                <button type="submit">Submit Booking</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+        
+        <section>
+            <h3>Connect With Us</h3>
+            <p>
+                <a href="#">Facebook</a> | 
+                <a href="#">Instagram</a> | 
+                <a href="#">Twitter</a> | 
+                <a href="#">YouTube</a>
+            </p>
+        </section>
+
+        <p>&copy; 2026 InstaFarms. All rights reserved.</p>
+        
+        <aside>
+            <p><a href="https://wa.me/919403892058" target="_blank">WhatsApp: +919403892058</a></p>
+        </aside>
+    </footer>
+</body>
+</html>
