@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Desserts List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Product List */
+        .products-section {
+            flex: 2;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 items per row */
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .category {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .name {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .price {
+            color: #c73a0f;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .add-btn {
+            background-color: #c73a0f;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .add-btn:hover {
+            background-color: #a32b07;
+        }
+
+        /* Simple Cart */
+        .cart-section {
+            flex: 1;
+        }
+
+        .cart-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-title {
+            color: #c73a0f;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .total {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .checkout-btn {
+            background-color: #c73a0f;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 25px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- List of Desserts -->
+        <div class="products-section">
+            <h1>Desserts</h1>
+            <div class="products-grid">
+
+                <!-- Item 1 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=400&h=400"
+                        alt="Waffle" class="product-img">
+                    <div class="category">Waffle</div>
+                    <div class="name">Waffle with Berries</div>
+                    <span class="price">$6.50</span>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?auto=format&fit=crop&w=400&h=400"
+                        alt="Crème Brûlée" class="product-img">
+                    <div class="category">Crème Brûlée</div>
+                    <div class="name">Vanilla Bean Crème Brûlée</div>
+                    <span class="price">$7.00</span>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1569864358637-a029430ec74a?auto=format&fit=crop&w=400&h=400"
+                        alt="Macaron" class="product-img">
+                    <div class="category">Macaron</div>
+                    <div class="name">Macaron Mix of Five</div>
+                    <span class="price">$8.00</span>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1571875211848-1845bb08f65a?auto=format&fit=crop&w=400&h=400"
+                        alt="Tiramisu" class="product-img">
+                    <div class="category">Tiramisu</div>
+                    <div class="name">Classic Tiramisu</div>
+                    <span class="price">$5.50</span>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519340333755-56e9c1d04579?auto=format&fit=crop&w=400&h=400"
+                        alt="Baklava" class="product-img">
+                    <div class="category">Baklava</div>
+                    <div class="name">Pistachio Baklava</div>
+                    <span class="price">$4.00</span>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&h=400"
+                        alt="Pie" class="product-img">
+                    <div class="category">Pie</div>
+                    <div class="name">Lemon Meringue Pie</div>
+                    <span class="price">$5.00</span>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Simple Cart Sidebar -->
+        <div class="cart-section">
+            <div class="cart-box">
+                <h2 class="cart-title">Your Cart (3)</h2>
+
+                <div class="cart-item">
+                    <h4>Macaron Mix of Five</h4>
+                    <p>1x @ $8.00 <b>$8.00</b></p>
+                </div>
+
+                <div class="cart-item">
+                    <h4>Classic Tiramisu</h4>
+                    <p>2x @ $5.50 <b>$11.00</b></p>
+                </div>
+
+                <div class="total">
+                    <span>Order Total</span>
+                    <span>$19.00</span>
+                </div>
+
+                <button class="checkout-btn">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

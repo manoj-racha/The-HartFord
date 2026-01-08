@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+    }
+
+    /* Flex container */
+    .tracker-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Card style */
+    .card {
+      flex: 1;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .income {
+      border-left: 6px solid green;
+    }
+
+    .expense {
+      border-left: 6px solid red;
+    }
+
+    .balance {
+      border-left: 6px solid blue;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p {
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tracker-container">
+    <div class="card income">
+      <h3>Income</h3>
+      <p>₹50,000</p>
+    </div>
+
+    <div class="card expense">
+      <h3>Expenses</h3>
+      <p>₹20,000</p>
+    </div>
+
+    <div class="card balance">
+      <h3>Balance</h3>
+      <p>₹30,000</p>
+    </div>
+  </div>
+
+</body>
+</html>
