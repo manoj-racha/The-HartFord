@@ -1,0 +1,149 @@
+
+function generateID() {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let id = "";
+  for (let i = 0; i < 3; i++) {
+    id += letters[Math.floor(Math.random() * 26)];
+  }
+  id += Math.floor(100 + Math.random() * 900);
+  return id;
+}
+
+
+function createPurchaseOrder(trainer, training, payment) {
+  const poNumber = generateID();
+
+  let totalAmount = 0;
+  if (payment.type === "monthly") {
+    totalAmount = payment.rate * training.durationMonths;
+  } else if (payment.type === "daily") {
+    totalAmount = payment.rate * training.durationDays;
+  } else if (payment.type === "hourly") {
+    totalAmount = payment.rate * training.durationHours;
+  } else {
+    throw new Error("Invalid payment type");
+  }
+
+  const po = {
+    poNumber,
+    trainerName: trainer.name,
+    trainerEmail: trainer.email,
+    trainerExperience: trainer.experience,
+    courseName: training.courseName,
+    clientName: training.clientName,
+    startDate: new Date(training.startDate),
+    endDate: new Date(training.endDate),
+    paymentType: payment.type,
+    rate: payment.rate,
+    durationMonths: training.durationMonths || 0,
+    durationDays: training.durationDays || 0,
+    durationHours: training.durationHours || 0,
+    totalAmount
+  };
+
+  console.log("\n----- PURCHASE ORDER -----");
+  console.log("PO Number      :", po.poNumber);
+  console.log("Trainer Name   :", po.trainerName);
+  console.log("Trainer Email  :", po.trainerEmail);
+  console.log("Trainer Exp    :", po.trainerExperience, "years");
+  console.log("Course Name    :", po.courseName);
+  console.log("Client Name    :", po.clientName);
+  console.log("Training Start :", po.startDate.toDateString());
+  console.log("Training End   :", po.endDate.toDateString());
+  console.log("Payment Type   :", po.paymentType);
+  console.log("Rate           : ₹" + po.rate);
+  console.log("Total Amount   : ₹" + po.totalAmount);
+  console.log("----------------------------");
+
+  return po;
+}
+
+
+
+function generateInvoice(po) {
+  const currentDate = new Date();
+
+  if (currentDate < po.endDate) {
+    console.log(
+      "\nInvoice cannot be generated until training is completed."
+    );
+    return null;
+  }
+
+  const invoiceNumber = generateID();
+  const invoiceDate = currentDate;
+  const dueDate = new Date();
+  dueDate.setDate(invoiceDate.getDate() + 30);
+
+  const invoice = {
+    invoiceNumber,
+    poNumber: po.poNumber,
+    trainerName: po.trainerName,
+    courseName: po.courseName,
+    totalAmount: po.totalAmount,
+    invoiceDate,
+    dueDate,
+    paymentStatus: "UNPAID"
+  };
+
+  console.log("\n----- INVOICE -----");
+  console.log("Invoice Number :", invoice.invoiceNumber);
+  console.log("PO Number      :", invoice.poNumber);
+  console.log("Trainer Name   :", invoice.trainerName);
+  console.log("Course Name    :", invoice.courseName);
+  console.log("Invoice Date   :", invoice.invoiceDate.toDateString());
+  console.log("Due Date       :", invoice.dueDate.toDateString());
+  console.log("Total Amount   : ₹" + invoice.totalAmount);
+  console.log("Payment Status :", invoice.paymentStatus);
+  console.log("----------------------------");
+
+  return invoice;
+}
+
+
+function checkOverdue(invoice) {
+  const currentDate = new Date();
+  if (invoice.paymentStatus === "UNPAID" && currentDate > invoice.dueDate) {
+    invoice.paymentStatus = "OVERDUE";
+    console.log(
+      `\nALERT: Invoice ${invoice.invoiceNumber} is OVERDUE! Sending email to accounts team...`
+    );
+
+    console.log(
+      `Email: Accounts team, Invoice ${invoice.invoiceNumber} for PO ${invoice.poNumber} is overdue.`
+    );
+  }
+}
+
+
+const trainer = {
+  name: "Sharath Kumar",
+  email: "sharath@example.com",
+  experience: 5
+};
+
+
+const training = {
+  courseName: "Java FSD",
+  clientName: "ABC Corp",
+  startDate: "2025-01-01",
+  endDate: "2025-06-01",
+  durationMonths: 5
+};
+
+
+const payment = {
+  type: "monthly", // monthly / daily / hourly
+  rate: 100000
+};
+
+
+const po = createPurchaseOrder(trainer, training, payment);
+
+
+const invoice = generateInvoice(po);
+
+
+if (invoice) {
+  checkOverdue(invoice);
+}
