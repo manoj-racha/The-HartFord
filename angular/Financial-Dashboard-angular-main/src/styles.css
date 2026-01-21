@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+  .btn-secondary {
+    @apply bg-white text-gray-700 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+  .btn-danger {
+    @apply bg-white text-danger border border-gray-200 px-4 py-2 rounded-lg hover:bg-red-50 hover:border-red-300 transition-colors font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-danger;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6;
+  }
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow;
+  }
+}/* You can add global styles to this file, and also import other style files */

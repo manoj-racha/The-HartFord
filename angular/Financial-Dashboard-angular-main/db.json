@@ -1,0 +1,262 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@findash.com",
+      "password": "admin123",
+      "firstName": "John",
+      "lastName": "Doe",
+      "role": "admin"
+    },
+    {
+      "id": "caba",
+      "firstName": "Manoj Kumar",
+      "lastName": "Racha",
+      "username": "manojracha",
+      "email": "manojracha1947@gmail.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "c8fe",
+      "firstName": "Raja",
+      "lastName": "Vardhan",
+      "username": "rajavad",
+      "email": "raja@gmail.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "11db",
+      "firstName": "Jaya",
+      "lastName": "Prakash",
+      "username": "jp",
+      "email": "jp@gmail.com",
+      "password": "123456",
+      "role": "user"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "accountName": "Primary Savings",
+      "accountNumber": "ACC-001-2024",
+      "accountType": "savings",
+      "balance": 15420.5,
+      "currency": "USD",
+      "isActive": true,
+      "createdAt": "2024-01-15T00:00:00.000Z",
+      "updatedAt": "2024-01-20T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "accountName": "Checking Account",
+      "accountNumber": "ACC-002-2024",
+      "accountType": "checking",
+      "balance": 5678.9,
+      "currency": "USD",
+      "isActive": true,
+      "createdAt": "2024-02-10T00:00:00.000Z",
+      "updatedAt": "2024-02-15T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "accountName": "Credit Card",
+      "accountNumber": "ACC-003-2024",
+      "accountType": "credit",
+      "balance": -2345,
+      "currency": "USD",
+      "isActive": true,
+      "createdAt": "2024-03-01T00:00:00.000Z",
+      "updatedAt": "2024-03-10T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": 1,
+      "accountName": "Investment Portfolio",
+      "accountNumber": "ACC-004-2024",
+      "accountType": "investment",
+      "balance": 45000,
+      "currency": "USD",
+      "isActive": true,
+      "createdAt": "2023-12-01T00:00:00.000Z",
+      "updatedAt": "2024-01-21T00:00:00.000Z"
+    },
+    {
+      "id": "495e",
+      "accountName": "Primary Account - SBI",
+      "accountNumber": "123456778",
+      "accountType": "savings",
+      "balance": 20000,
+      "currency": "INR",
+      "isActive": true,
+      "userId": "caba"
+    },
+    {
+      "id": "3ee0",
+      "accountName": "SBI",
+      "accountNumber": "1234567890",
+      "accountType": "savings",
+      "balance": 100000,
+      "currency": "INR",
+      "isActive": true,
+      "userId": "c8fe"
+    },
+    {
+      "id": "3a4c",
+      "accountName": "SBJ",
+      "accountNumber": "696696969",
+      "accountType": "savings",
+      "balance": 200000,
+      "currency": "INR",
+      "isActive": true,
+      "userId": "c8fe"
+    },
+    {
+      "id": "79a9",
+      "accountName": "SBJ",
+      "accountNumber": "1234567890",
+      "accountType": "savings",
+      "balance": 100000,
+      "currency": "INR",
+      "isActive": true,
+      "userId": "11db"
+    },
+    {
+      "id": "cc3c",
+      "accountName": "Union",
+      "accountNumber": "1122334455",
+      "accountType": "savings",
+      "balance": 100000,
+      "currency": "INR",
+      "isActive": true,
+      "userId": "11db"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1",
+      "userId": 1,
+      "accountId": 1,
+      "type": "income",
+      "category": "Salary",
+      "amount": 5000,
+      "description": "Monthly salary deposit",
+      "date": "2024-01-15T00:00:00.000Z",
+      "status": "completed",
+      "createdAt": "2024-01-15T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "accountId": 1,
+      "type": "expense",
+      "category": "Groceries",
+      "amount": 250.75,
+      "description": "Weekly grocery shopping",
+      "date": "2024-01-18T00:00:00.000Z",
+      "status": "completed",
+      "createdAt": "2024-01-18T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "accountId": 2,
+      "type": "expense",
+      "category": "Utilities",
+      "amount": 120.5,
+      "description": "Electric bill payment",
+      "date": "2024-01-20T00:00:00.000Z",
+      "status": "completed",
+      "createdAt": "2024-01-20T00:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": 1,
+      "accountId": 1,
+      "type": "income",
+      "category": "Freelance",
+      "amount": 1500,
+      "description": "Web development project",
+      "date": "2024-01-19T00:00:00.000Z",
+      "status": "completed",
+      "createdAt": "2024-01-19T00:00:00.000Z"
+    },
+    {
+      "id": "5",
+      "userId": 1,
+      "accountId": 3,
+      "type": "expense",
+      "category": "Shopping",
+      "amount": 450,
+      "description": "Online shopping",
+      "date": "2024-01-17T00:00:00.000Z",
+      "status": "pending",
+      "createdAt": "2024-01-17T00:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "userId": 1,
+      "accountId": 2,
+      "type": "expense",
+      "category": "Transportation",
+      "amount": 85,
+      "description": "Gas station",
+      "date": "2024-01-16T00:00:00.000Z",
+      "status": "completed",
+      "createdAt": "2024-01-16T00:00:00.000Z"
+    },
+    {
+      "id": "7",
+      "userId": 1,
+      "accountId": 1,
+      "type": "expense",
+      "category": "Entertainment",
+      "amount": 65,
+      "description": "Movie tickets",
+      "date": "2024-01-14T00:00:00.000Z",
+      "status": "completed",
+      "createdAt": "2024-01-14T00:00:00.000Z"
+    },
+    {
+      "id": "8",
+      "userId": 1,
+      "accountId": 1,
+      "type": "income",
+      "category": "Investment",
+      "amount": 320,
+      "description": "Dividend payment",
+      "date": "2024-01-21T00:00:00.000Z",
+      "status": "completed",
+      "createdAt": "2024-01-21T00:00:00.000Z"
+    },
+    {
+      "id": "0dd7",
+      "accountId": "495e",
+      "type": "income",
+      "category": "Salary",
+      "amount": 100000,
+      "description": "",
+      "date": "2026-01-21",
+      "status": "completed",
+      "userId": "caba",
+      "createdAt": "2026-01-21T09:24:46.596Z"
+    },
+    {
+      "id": "999b",
+      "accountId": "3ee0",
+      "type": "income",
+      "category": "Salary",
+      "amount": 40000,
+      "description": "credited",
+      "date": "2026-01-21",
+      "status": "completed",
+      "userId": "c8fe",
+      "createdAt": "2026-01-21T10:16:23.171Z"
+    }
+  ]
+}
