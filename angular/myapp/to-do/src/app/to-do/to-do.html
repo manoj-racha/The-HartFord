@@ -1,0 +1,31 @@
+<div class="todo-container">
+    <h2>Todo List</h2>
+
+    <!-- Add Todo Form -->
+    <form (ngSubmit)="addTodo()" #todoForm="ngForm">
+        <input type="text" [(ngModel)]="newTodoTitle" name="title" placeholder="Add new todo..." required
+            class="todo-input">
+        <button type="submit" class="add-btn">Add</button>
+    </form>
+
+    <!-- Todo List -->
+    <ul class="todo-list">
+        @for (todo of todos(); track todo.id) {
+        <li class="todo-item">
+            <input type="checkbox" [checked]="todo.completed" (change)="toggleTodo(todo)">
+
+            @if (editingId() === todo.id) {
+            <input #editInput type="text" [(ngModel)]="editTitle" (keydown.enter)="saveEdit(todo.id!)"
+                (keydown.escape)="cancelEdit()" (blur)="saveEdit(todo.id!)" class="edit-input" autofocus />
+            } @else {
+            <span (dblclick)="startEdit(todo)" [class.completed]="todo.completed" class="todo-title">
+                {{ todo.title }}
+            </span>
+            }
+
+            <button (click)="deleteTodo(todo.id!)" class="delete-btn">Delete</button>
+            <button (click)="startEdit(todo)" class="edit-btn" aria-label="Edit todo">Edit</button>
+        </li>
+        }
+    </ul>
+</div>

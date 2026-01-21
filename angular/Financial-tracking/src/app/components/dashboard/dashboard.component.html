@@ -1,0 +1,40 @@
+<div class="dashboard-container">
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <h1>XYZ Financial Tracking</h1>
+        <div class="nav-bar">
+            <button [class.active]="viewMode() === 'XYZ'" (click)="switchToXYZ()">XYZ Overview</button>
+            <button *ngFor="let p of properties()" [class.active]="currentProperty()?.id === p.id"
+                (click)="switchToProperty(p)">
+                {{ p.name }}
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <!-- 1. Stats Area -->
+        <div class="section-title">
+            <h2>{{ viewMode() === 'XYZ' ? 'Total Company Financials' : currentProperty()?.name + ' Financials' }}</h2>
+        </div>
+        <app-stats [transactions]="displayedTransactions()"></app-stats>
+
+        <div class="grid" [class.one-col]="viewMode() !== 'XYZ' && !transactionToEdit()">
+            <!-- 2. Global Add Transaction Form -->
+            <div class="column" *ngIf="viewMode() === 'XYZ' || transactionToEdit()">
+                <app-add-transaction [properties]="properties()" [transactionToEdit]="transactionToEdit()"
+                    (transactionAdded)="onTransactionSaved($event)" (editCancelled)="transactionToEdit.set(null)">
+                </app-add-transaction>
+            </div>
+
+            <!-- 3. Transaction List -->
+            <div class="column">
+                <app-transaction-list [transactions]="displayedTransactions()" (listChanged)="loadAllTransactions()"
+                    (editRequested)="onEditRequested($event)">
+                </app-transaction-list>
+            </div>
+        </div>
+    </div>
+</div>

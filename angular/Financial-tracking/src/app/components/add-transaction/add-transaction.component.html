@@ -1,0 +1,56 @@
+<div class="add-box">
+    <h3>{{ isEditing ? 'Edit Transaction' : 'Add Transaction' }}</h3>
+    <div class="form-grid">
+
+        <!-- Property Dropdown -->
+        <div class="form-group full-width">
+            <label>Property</label>
+            <select [(ngModel)]="selectedPropertyId">
+                <option value="" disabled selected>Select a Property...</option>
+                <option *ngFor="let p of properties()" [value]="p.id">
+                    {{ p.name }}
+                </option>
+            </select>
+        </div>
+
+        <!-- Type -->
+        <div class="form-group">
+            <label>Type</label>
+            <select [(ngModel)]="type">
+                <option value="Income">Income</option>
+                <option value="Expense">Expense</option>
+            </select>
+        </div>
+
+        <!-- Date -->
+        <div class="form-group">
+            <label>Date</label>
+            <input type="date" [(ngModel)]="date">
+        </div>
+
+        <!-- Amount -->
+        <div class="form-group">
+            <label>Amount</label>
+            <input type="number" [(ngModel)]="amount" placeholder="0.00">
+        </div>
+
+        <!-- Category -->
+        <div class="form-group">
+            <label>Category</label>
+            <input type="text" [(ngModel)]="category" placeholder="e.g. Rent, Food">
+        </div>
+
+        <!-- Description -->
+        <div class="form-group full-width">
+            <label>Description</label>
+            <input type="text" [(ngModel)]="description" placeholder="Details...">
+        </div>
+    </div>
+
+    <div class="actions">
+        <button (click)="save()" [disabled]="!isValid()" [class.btn-update]="isEditing">
+            {{ isEditing ? 'Update Transaction' : 'Add Transaction' }}
+        </button>
+        <button *ngIf="isEditing" (click)="cancelEdit()" class="btn-cancel">Cancel</button>
+    </div>
+</div>

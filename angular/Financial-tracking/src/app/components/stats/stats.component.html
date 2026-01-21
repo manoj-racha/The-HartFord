@@ -1,0 +1,14 @@
+<div class="stats-grid">
+    <div class="card income">
+        <h3>Income</h3>
+        <p>+ {{ income() | currency }}</p>
+    </div>
+    <div class="card expense">
+        <h3>Expense</h3>
+        <p>- {{ expense() | currency }}</p>
+    </div>
+    <div class="card balance" [class.negative]="balance() < 0">
+        <h3>Balance</h3>
+        <p>{{ balance() | currency }}</p>
+    </div>
+</div>

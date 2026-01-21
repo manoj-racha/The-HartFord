@@ -1,0 +1,8 @@
+<div class="property-switch">
+    <label>Select Property: </label>
+    <select [(ngModel)]="selectedId" (ngModelChange)="onChange()">
+        <option *ngFor="let p of properties" [value]="p.id">
+            {{ p.name }}
+        </option>
+    </select>
+</div>

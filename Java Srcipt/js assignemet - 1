@@ -83,7 +83,7 @@ function generateInvoice(po) {
     totalAmount: po.totalAmount,
     invoiceDate,
     dueDate,
-    paymentStatus: "UNPAID"
+    paymentStatus: "UNPAID"npm i cors
   };
 
   console.log("\n----- INVOICE -----");

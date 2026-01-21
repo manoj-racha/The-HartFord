@@ -1,0 +1,70 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+h2,
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  /* Ensures padding doesn't widen the element */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Validation Styles */
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: #dc3545;
+  background-color: #fff8f8;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.address-group {
+  border: 1px dashed #aaa;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}

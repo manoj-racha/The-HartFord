@@ -1,0 +1,21 @@
+{
+  "insuranceHolders": [
+    {
+      "id": "c266",
+      "name": "Manoj Kumar",
+      "policyNumber": "PLCY123",
+      "policyType": "Health",
+      "premium": 100,
+      "phone": "1234567890",
+      "email": "test@example.com",
+      "dateOfBirth": "2026-01-08",
+      "nominee": "manoj",
+      "address": {
+        "street": "123 Test St",
+        "city": "Test City",
+        "state": "TS",
+        "pincode": "500000"
+      }
+    }
+  ]
+}

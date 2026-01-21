@@ -1,0 +1,18 @@
+<div class="container" *ngIf="insurance">
+    <h2>Delete Confirmation</h2>
+
+    <div class="alert alert-danger">
+        <p>Are you sure you want to delete the following Insurance Holder?</p>
+    </div>
+
+    <div class="details">
+        <p><strong>Name:</strong> {{ insurance.name }}</p>
+        <p><strong>Policy Number:</strong> {{ insurance.policyNumber }}</p>
+        <p><strong>Email:</strong> {{ insurance.email }}</p>
+    </div>
+
+    <div class="actions">
+        <button (click)="confirmDelete()" class="btn-danger">Yes, Delete</button>
+        <button (click)="cancel()" class="btn-secondary">Cancel</button>
+    </div>
+</div>

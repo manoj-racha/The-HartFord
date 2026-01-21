@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Insurance Holders List</h2>
+
+    <div class="actions">
+        <button routerLink="/add" class="btn-add">Add New Holder</button>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Policy No</th>
+                <th>Type</th>
+                <th>Premium</th>
+                <th>Phone</th>
+                <th>Validation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let insurance of insurances">
+                <td>{{ insurance.id }}</td>
+                <td>{{ insurance.name }}</td>
+                <td>{{ insurance.policyNumber }}</td>
+                <td>{{ insurance.policyType }}</td>
+                <td>{{ insurance.premium | currency:'INR' }}</td>
+                <td>{{ insurance.phone }}</td>
+                <td>
+                    <button [routerLink]="['/update', insurance.id]" class="btn-edit">Edit</button>
+                    <button [routerLink]="['/delete', insurance.id]" class="btn-delete">Delete</button>
+                </td>
+            </tr>
+            <tr *ngIf="insurances.length === 0">
+                <td colspan="7" class="text-center">No records found.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
